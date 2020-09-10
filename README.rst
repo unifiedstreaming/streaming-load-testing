@@ -6,7 +6,7 @@ This extension is **NOT** a product/solution by Unified Streaming.
 
 Docs: `MMSys2020 paper`_
 
-.. _`MMSys2020 paper`: https://github.com/unifiedstreaming/streaming-load-testing/docs/MMSys2020-paper.pdf
+.. _`MMSys2020 paper`: docs/MMSys2020-paper.pdf
 .. _`Locust`: https://locust.io/
 
 .. contents:: Table of Contents
