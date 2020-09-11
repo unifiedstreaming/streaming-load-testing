@@ -51,7 +51,7 @@ following commands.
 
     #!/bin/bash
     git clone https://github.com/unifiedstreaming/streaming-load-testing.git
-    cs streaming_load_testing
+    cd streaming-load-testing
     make init
 
 
@@ -81,8 +81,7 @@ Create Docker image by building the Docker file provided.
 
     #!/bin/bash
     git clone https://github.com/unifiedstreaming/streaming-load-testing.git
-    cd streaming_load_testing
-    make init
+    cd streaming-load-testing
     make build
 
 Run a simple load testing example using the built docker image. The following
