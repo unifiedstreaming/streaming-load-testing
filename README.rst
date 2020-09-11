@@ -50,7 +50,7 @@ following commands.
 .. code-block:: bash 
 
     #!/bin/bash
-    git clone https://git.unified-streaming.com/research/streaming_load_testing
+    git clone https://github.com/unifiedstreaming/streaming-load-testing.git
     cs streaming_load_testing
     make init
 
@@ -80,8 +80,9 @@ Create Docker image by building the Docker file provided.
 .. code-block:: bash
 
     #!/bin/bash
-    git clone https://git.unified-streaming.com/research/streaming_load_testing
+    git clone https://github.com/unifiedstreaming/streaming-load-testing.git
     cd streaming_load_testing
+    make init
     make build
 
 Run a simple load testing example using the built docker image. The following
@@ -102,7 +103,7 @@ Load test example
         -e "bitrate=lowest_bitrate" \
         -p 8089:8089 \
         -v ${PWD}/test-results/:/test-results/ \
-        unified-streaming/load-generator \
+        unified-streaming/streaming-load-testing \
         -f /load_generator/locustfiles/vod_dash_hls_sequence.py \
         --no-web -c 1 -r 1 --run-time 10s --only-summary \
         --csv=../test-results/output_example 
