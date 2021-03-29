@@ -23,8 +23,8 @@ from load_generator.common.hls_emulation import class_hls_player
 
 
 @pytest.mark.parametrize("hostname,ism_path", [(
-        'http://localhost',
-        'tears-of-steel-avc1.ism'
+        'http://demo.unified-streaming.com',
+        'video/ateam/ateam.ism'
     )
 ])
 @pytest.mark.parametrize("streaming_output", ["m3u8", "mpd"])
@@ -45,7 +45,7 @@ def test_vod_dash_hls_sequence(
         f" --no-web"
         f" -c 1"
         f" -r 1"
-        f" --run-time 2s"
+        f" --run-time 1s"
         f" --only-summary")
     locust_list_cmd = locust_str_cmd.split(' ')
     print(f"Locust command:\n {locust_list_cmd}")

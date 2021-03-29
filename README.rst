@@ -90,23 +90,26 @@ results in the folder test-results.
 
 Load test example
 """""""""""""""""
+
 .. code-block:: bash 
 
     #!/bin/bash
 
-    docker run  \
+    docker run -it \
         -e "HOST_URL=https://demo.unified-streaming.com" \
         -e "MANIFEST_FILE=/video/ateam/ateam.ism/ateam.mpd" \
         -e "mode=vod" \
         -e "play_mode=full_playback" \
         -e "bitrate=lowest_bitrate" \
+        -e "LOCUST_LOCUSTFILE=/load_generator/locustfiles/vod_dash_hls_sequence.py" \
+        -e "LOCUST_HEADLESS=true" \
+        -e "LOCUST_USERS=1" \
+        -e "LOCUST_SPAWN_RATE=1" \
+        -e "LOCUST_RUN_TIME=2s" \
+        -e "LOCUST_ONLY_SUMMARY=true" \
         -p 8089:8089 \
-        -v ${PWD}/test-results/:/test-results/ \
-        unified-streaming/streaming-load-testing \
-        -f /load_generator/locustfiles/vod_dash_hls_sequence.py \
-        --no-web -c 1 -r 1 --run-time 10s --only-summary \
-        --csv=../test-results/output_example 
-
+        unifiedstreaming/load-generator:latest \
+        --no-web
 
 
 

@@ -67,13 +67,13 @@ test: env
 .PHONY: build
 
 build:
-	time docker build -t unified-streaming/streaming-load-testing:$(TAG) .
+	time docker build -t unifiedstreaming/load-generator:$(TAG) .
 
 
 .PHONY: docker-stop
 
 docker-stop:
-	-docker stop unified-streaming/streaming-load-testing
+	docker stop unified-streaming/streaming-load-testing
 	docker container prune -f
 
 

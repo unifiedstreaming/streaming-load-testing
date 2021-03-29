@@ -1,4 +1,4 @@
-FROM python:3.8-alpine
+FROM python:3.6-alpine3.13
 LABEL maintainer "Roberto Ramos <roberto@unified-streaming.com>"
 
 # Install packages
